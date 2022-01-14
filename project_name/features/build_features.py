@@ -5,6 +5,8 @@ from sklearn.preprocessing import scale
 
 def preprocessing_data(data):
     users_sessions = data[['session_id', 'user_id', 'timestamp']].dropna().drop_duplicates()
+    #data = data[['session_id', 'product_id', 'event_type', 'offered_discount', 'purchase_id']].merge(users_sessions, 'left')
+    data = data[data['user_id'].notna()]
     return configure_data(users_sessions, data)
 
 def configure_data(users_sessions, df_sessions):

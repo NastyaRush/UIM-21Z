@@ -16,10 +16,10 @@ def main():
     # print(reports_path+'affinity_propagation_graph.png')
     graph.graph(a_yhat, a_clusters, a_data, reports_path, 'affinity_propagation_graph.png')
     graph.graph(b_yhat, b_clusters, b_data, reports_path, 'birch_graph.png')
-    evaluate_algorithm.silh_score(a_data, a_yhat, reports_path, "affinity_propagation")
-    evaluate_algorithm.db_score(a_data, a_yhat, reports_path, "affinity_propagation")
-    evaluate_algorithm.silh_score(b_data, b_yhat, reports_path, "birch")
-    evaluate_algorithm.db_score(b_data, b_yhat, reports_path, "birch")
+    evaluate_algorithm.silh_score(a_data, a_yhat, reports_path, "affinity_propagation", 'w')
+    evaluate_algorithm.db_score(a_data, a_yhat, reports_path, "affinity_propagation", 'a')
+    evaluate_algorithm.silh_score(b_data, b_yhat, reports_path, "birch", 'a')
+    evaluate_algorithm.db_score(b_data, b_yhat, reports_path, "birch", 'a')
 
 
 
